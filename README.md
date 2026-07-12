@@ -18,7 +18,7 @@ Talvez sempre tenha existido apenas um espelho.
 
 Acesse a versão online:
 
-**[https://harrisalexandre.github.io/promo-feira-livro/](https://harrisalexandre.github.io/promotional-livro/)**
+**[Leia agora mesmo gratuitamente!](https://harrisalexandre.github.io/promotional-livro/)**
 
 Os **7 primeiros capítulos** estão disponíveis gratuitamente.
 
