@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="./livro/assets/logo.svg">
+  <title>Olhos do Silêncio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cormorant+SC:wght@300;400;500&family=Inter:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body class="theme-dark" data-font-size="medium" data-line-height="normal"> <!-- Top progress bar -->
+  <div id="progress-bar-top">
+    <div id="progress-bar-fill"></div>
+  </div> <!-- Header -->
+  <header id="main-header"> <button id="btn-toggle-sidebar" aria-label="Abrir menu" title="Índice">
+      <span></span><span></span><span></span> </button>
+    <div id="header-title-area"> <span id="header-book-title">Olhos do Silêncio</span> <span
+        id="header-chapter-info"></span> </div>
+    <div id="header-actions"> <button id="btn-search" aria-label="Buscar" title="Buscar no livro"> <svg width="18"
+          height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="11" cy="11" r="8" />
+          <path d="m21 21-4.35-4.35" />
+        </svg> </button> <button id="btn-bookmark" aria-label="Marcar posição" title="Adicionar marcador"> <svg
+          width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+        </svg> </button> <button id="btn-settings" aria-label="Configurações" title="Configurações"> <svg width="18"
+          height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="12" cy="12" r="3" />
+          <path
+            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+        </svg> </button> </div>
+  </header> <!-- Sidebar -->
+  <aside id="sidebar">
+    <div id="sidebar-header">
+      <div id="sidebar-book-info">
+        <div id="sidebar-title"></div>
+        <div id="sidebar-author"></div>
+      </div> <button id="btn-close-sidebar" aria-label="Fechar menu"> <svg width="20" height="20" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M18 6 6 18M6 6l12 12" />
+        </svg> </button>
+    </div>
+    <div id="sidebar-stats">
+      <div class="stat-item"> <span id="stat-progress-pct">0%</span> <span class="stat-label">concluído</span> </div>
+      <div class="stat-item"> <span id="stat-chapters-read">0</span> <span class="stat-label">capítulos lidos</span>
+      </div>
+    </div>
+    <div id="sidebar-search-container"> <input type="text" id="sidebar-search-input" placeholder="Buscar no livro…"
+        autocomplete="off" /> </div>
+    <nav id="chapter-list" role="navigation" aria-label="Índice de capítulos"></nav>
+    <div id="sidebar-bottom"> <button id="btn-continue-reading"> <svg width="14" height="14" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="5 3 19 12 5 21 5 3" />
+        </svg> Continuar leitura </button> </div>
+  </aside> <!-- Sidebar overlay -->
+  <div id="sidebar-overlay"></div> <!-- Cover screen -->
+  <div id="cover-screen">
+    <div id="cover-inner">
+      <div id="cover-ornament">&#10023;</div>
+      <div class="promo-badge"> VERSÃO PROMOCIONAL </div>
+      <div id="cover-book-title"></div>
+      <div id="cover-divider"></div>
+      <div id="cover-author"></div>
+      <div id="cover-description"> Leia gratuitamente os <strong>7 primeiros capítulos</strong> de <em>Olhos do
+          Silêncio</em> e descubra o início da investigação que nunca deveria ter começado. </div>
+      <div id="cover-actions"> <button id="btn-start-reading">Começar a ler</button> <button id="btn-resume-reading"
+          class="hidden"> Continuar do capítulo <span id="resume-chapter-name"></span> </button> </div>
+      <div id="cover-chapter-count"> Versão promocional • Contém os 7 primeiros capítulos </div>
+    </div>
+  </div> <!-- Main reading area -->
+  <main id="main-content">
+    <article id="chapter-container">
+      <div id="chapter-reading-meta"> <span id="chapter-reading-time"></span> <span id="chapter-position-label"></span>
+      </div>
+      <div id="chapter-content"></div>
+      <div id="chapter-nav"> <button id="btn-prev-chapter" class="nav-btn"> <svg width="16" height="16"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M15 18l-6-6 6-6" />
+          </svg> <span>Anterior</span> </button>
+        <div id="chapter-nav-center"> <button id="btn-goto-index" class="btn-index-link">Índice</button>
+          <div id="nav-chapter-indicator"></div>
+        </div> <button id="btn-next-chapter" class="nav-btn"> <span>Próximo</span> <svg width="16" height="16"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M9 18l6-6-6-6" />
+          </svg> </button>
+      </div>
+    </article>
+  </main> <!-- Settings panel -->
+  <div id="settings-panel" class="panel hidden">
+    <div class="panel-header">
+      <h3>Configurações</h3> <button class="btn-close-panel" data-target="settings-panel"> <svg width="18" height="18"
+          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M18 6 6 18M6 6l12 12" />
+        </svg> </button>
+    </div>
+    <div class="panel-body">
+      <div class="setting-group"> <label class="setting-label">Tema</label>
+        <div class="btn-group"> <button class="theme-btn active" data-theme="dark">Escuro</button> <button
+            class="theme-btn" data-theme="sepia">Sépia</button> <button class="theme-btn"
+            data-theme="light">Claro</button> </div>
+      </div>
+      <div class="setting-group"> <label class="setting-label">Tamanho da fonte</label>
+        <div class="btn-group"> <button class="size-btn" data-size="small">Pequena</button> <button
+            class="size-btn active" data-size="medium">Média</button> <button class="size-btn"
+            data-size="large">Grande</button> <button class="size-btn" data-size="xlarge">Extra</button> </div>
+      </div>
+      <div class="setting-group"> <label class="setting-label">Espaçamento entre linhas</label>
+        <div class="btn-group"> <button class="lh-btn" data-lh="compact">Compacto</button> <button class="lh-btn active"
+            data-lh="normal">Normal</button> <button class="lh-btn" data-lh="relaxed">Amplo</button> </div>
+      </div>
+      <div class="setting-group"> <label class="setting-label">Largura do texto</label>
+        <div class="btn-group"> <button class="width-btn" data-width="narrow">Estreita</button> <button
+            class="width-btn active" data-width="normal">Normal</button> <button class="width-btn"
+            data-width="wide">Larga</button> </div>
+      </div>
+    </div>
+  </div> <!-- Search panel -->
+  <div id="search-panel" class="panel hidden">
+    <div class="panel-header">
+      <h3>Buscar no livro</h3> <button class="btn-close-panel" data-target="search-panel"> <svg width="18" height="18"
+          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M18 6 6 18M6 6l12 12" />
+        </svg> </button>
+    </div>
+    <div class="panel-body">
+      <div class="search-input-wrap"> <input type="text" id="search-input" placeholder="Digite para buscar…"
+          autocomplete="off" /> <button id="btn-do-search"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.35-4.35" />
+          </svg> </button> </div>
+      <div id="search-results"></div>
+    </div>
+  </div> <!-- Bookmark notification -->
+  <div id="bookmark-toast" class="toast hidden">Marcador salvo</div> <!-- Panel backdrop -->
+  <div id="panel-backdrop" class="hidden"></div>
+  <div id="imageModal" class="image-modal" onclick="closeImage()"> <img id="modalImage" alt=""> </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

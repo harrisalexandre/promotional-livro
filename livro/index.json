@@ -1,0 +1,19 @@
+{
+  "titulo": "Olhos do Silêncio",
+  "autor": "Harris Alexandre",
+  "descricao": "Uma estátua vermelha encontrada em paredes lacradas. Uma cidade que começa a apodrecer por dentro. E olhos que nunca desviam.",
+  "capitulos": [
+    { "arquivo": "copyright.md", "titulo": "Copyright", "ato": "Prólogo" },
+    { "arquivo": "epigrafe.md", "titulo": "Epígrafe", "ato": "Prólogo" },
+    { "arquivo": "dedicatoria.md", "titulo": "Dedicatória", "ato": "Prólogo" },
+    { "arquivo": "prologo.md", "titulo": "Prólogo — O Primeiro Dono", "ato": "Prólogo" },
+    { "arquivo": "cap01.md", "titulo": "Capítulo 1 — A Demolição", "ato": "Ato I — A Descoberta" },
+    { "arquivo": "cap02.md", "titulo": "Capítulo 2 — Os Olhos", "ato": "Ato I — A Descoberta" },
+    { "arquivo": "cap03.md", "titulo": "Capítulo 3 — O Jornalista", "ato": "Ato I — A Descoberta" },
+    { "arquivo": "cap04.md", "titulo": "Capítulo 4 — A Primeira Lenda", "ato": "Ato I — A Descoberta" },
+    { "arquivo": "cap05.md", "titulo": "Capítulo 5 — O Primeiro Sinal", "ato": "Ato I — A Descoberta" },
+    { "arquivo": "cap06.md", "titulo": "Capítulo 6 — O Diário Perdido", "ato": "Ato I — A Descoberta" },
+    { "arquivo": "cap07.md", "titulo": "Capítulo 7 — A Manchete", "ato": "Ato I — A Descoberta" },
+    { "arquivo": "about-author.md", "titulo": "Sobre o Autor", "ato": "Extras" }
+  ]
+}
